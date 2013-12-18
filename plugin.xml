@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="com.luyun.msg" version="0.1.0">
+    <name>msg</name>
+
+    <js-module src="www/MsgPlugin.js" name="msg">
+        <clobbers target="msg" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MsgPlugin">
+                <param name="android-package" value="com.luyun.msg.MsgPlugin"/>
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.SEND_SMS" />
+            <uses-permission android:name="android.permission.VIBRATE" />
+        </config-file>
+      
+        <source-file src="src/android/MsgPlugin.java" target-dir="src/com/luyun/msg" />
+        <source-file src="src/android/MsgListener.java" target-dir="src/com/luyun/msg" />
+        <source-file src="src/android/Checkin.java" target-dir="src/com/luyun/msg" />
+
+     </platform>
+
+</plugin> 
