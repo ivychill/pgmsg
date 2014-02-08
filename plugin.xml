@@ -4,7 +4,7 @@
     <name>msg</name>
 
     <js-module src="www/MsgPlugin.js" name="msg">
-        <clobbers target="msg" />
+        <merges target="msg" />
     </js-module>
 
     <!-- android -->
