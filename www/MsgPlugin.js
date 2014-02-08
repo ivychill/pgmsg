@@ -5,6 +5,14 @@
 var exec = require('cordova/exec'),
     cordova = require('cordova');
 
+function  resultHandler (result) {
+    alert("SUCCESS: \r\n"+result );
+}
+
+function errorHandler (error) {
+    alert("ERROR: \r\n"+error );
+}
+
 function MsgPlugin() {
     init(resultHandler, errorHandler, 'returnSuccess');
 }
