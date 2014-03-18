@@ -127,8 +127,8 @@ public class MsgPlugin extends CordovaPlugin implements MsgListener {
                 + "\nsimSerialNumber: " + simSerialNumber
                 + "\nsubscriberId: " + subscriberId);
 
-        uid = imei;
-        key = uid;
+        uid = android_id;
+        key = "62c6e8ee0c06df7d";
         Log.i(TAG, "uid = " + uid);
         setUidAndKey(uid, key);
         
