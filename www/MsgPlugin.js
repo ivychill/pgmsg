@@ -23,10 +23,15 @@ function init (success, fail, resultType) {
                        "init", [resultType]); 
 };
     
-MsgPlugin.prototype.trans = function (success, fail, resultType) { 
+MsgPlugin.prototype.trans = function (str, success, fail) { 
     return cordova.exec (success, fail, 
                        "MsgPlugin", 
-                       "trans", [resultType]); 
-}; 
+                       "trans", [str]); 
+
+MsgPlugin.prototype.destroy = function (success, fail, resultType) {
+    return cordova.exec (success, fail,
+        "MsgPlugin",
+        "destroy", [resultType]);
+};
 
 module.exports = new MsgPlugin();

@@ -64,7 +64,11 @@ public class MsgPlugin extends CordovaPlugin implements MsgListener {
             String strMsg = args.getString(0);
             trans(strMsg);
             return true;
+        } else if ("destroy".equals(action)) {
+            destroy();
+            return true;
         }
+        Log.d(TAG, "undefined method");
         return false;
     }
     
@@ -135,6 +139,12 @@ public class MsgPlugin extends CordovaPlugin implements MsgListener {
         zmqThread = new ZmqThread();
         zmqThread.start();
         zmqThread.setOnMsgListener(MsgPlugin.this);
+    }
+
+    public void destroy()
+    {
+        Log.d(TAG, "destroy");
+        cordova.getActivity().unregisterReceiver(mConnectivityChangeReceiver);
     }
     
     public boolean isConnectedToInternet() {
