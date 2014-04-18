@@ -18,18 +18,18 @@ function MsgPlugin() {
 }
 
 function init (success, fail, resultType) { 
-    return cordova.exec (success, fail, 
+    exec (success, fail, 
                        "MsgPlugin", 
                        "init", [resultType]); 
 };
     
 MsgPlugin.prototype.trans = function (str, success, fail) { 
-    return cordova.exec (success, fail, 
+    exec (success, fail, 
                        "MsgPlugin", 
                        "trans", [str]); 
 
 MsgPlugin.prototype.destroy = function (success, fail, resultType) {
-    return cordova.exec (success, fail,
+    exec (success, fail,
         "MsgPlugin",
         "destroy", [resultType]);
 };
