@@ -27,6 +27,7 @@ MsgPlugin.prototype.trans = function (str, success, fail) {
     exec (success, fail, 
                        "MsgPlugin", 
                        "trans", [str]); 
+};
 
 MsgPlugin.prototype.destroy = function (success, fail, resultType) {
     exec (success, fail,
